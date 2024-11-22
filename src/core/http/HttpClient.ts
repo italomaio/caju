@@ -1,15 +1,14 @@
 import HttpClientSingleton from "./HttpClientSingleton";
 
 import { IHttpClient, IHttpRequestConfig, IHttpResponse } from "~/types/Http";
-import { axiosInstance } from "~/configs/axios";
-import { AxiosHeaders } from "axios";
+import axios, { AxiosHeaders } from "axios";
 
 export const axiosClient: IHttpClient = async <T>(
   config: IHttpRequestConfig
 ): Promise<IHttpResponse<T>> => {
   const { body, method, url, headers, params } = config;
 
-  const response = await axiosInstance.request({
+  const response = await axios.request({
     method,
     url,
     headers,

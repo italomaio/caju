@@ -46,5 +46,5 @@ module.exports = {
     "import/named": "off",
     "react-hooks/exhaustive-deps": "warn",
   },
-  ignorePatterns: ["coverage/"],
+  ignorePatterns: ["coverage/", "dist/"],
 };
