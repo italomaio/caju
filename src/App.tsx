@@ -10,7 +10,7 @@ const queryClient = new QueryClient();
 
 function App() {
   useEffect(() => {
-    console.log(process.env);
+    console.log("vars", process.env, import.meta.env);
   }, []);
 
   return (
