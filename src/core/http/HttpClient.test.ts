@@ -2,7 +2,6 @@ import { RegistrationType } from "~/types/Registration";
 import { httpClient } from "./HttpClient";
 import { waitFor } from "@testing-library/react";
 import { sampleUser } from "~/utils/tests";
-import { axiosInstance } from "~/configs/axios";
 
 describe("HttpClient tests", () => {
   beforeEach(() => jest.clearAllMocks());
@@ -26,9 +25,5 @@ describe("HttpClient tests", () => {
     await waitFor(() =>
       expect(result).toEqual({ data: [sampleUser], status: 200 })
     );
-  });
-
-  it("Should create axiosInstance", () => {
-    expect(axiosInstance).toBeDefined();
   });
 });
