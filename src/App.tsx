@@ -5,12 +5,14 @@ import { ConfirmContextProvider } from "./store/context/confirm/ConfirmContextPr
 import ConfirmDialog from "./components/ConfirmModal";
 import Loader from "./components/Loader";
 import { useEffect } from "react";
+import axios from "axios";
 
 const queryClient = new QueryClient();
 
 function App() {
   useEffect(() => {
-    console.log(import.meta.env);
+    axios.defaults.baseURL = import.meta?.env?.VITE_API_URL;
+    console.log(import.meta.env.VITE_API_URL);
   }, []);
 
   return (
