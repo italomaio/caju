@@ -94,4 +94,6 @@ jobs:
           curl -fsSL https://railway.app/install.sh | sh
 
       - name: Deploy to Railway
-        run: RAILWAY_TOKEN=${{ secrets.RAILWAY_TOKEN }} railway up --ci
+        run: railway up --ci
+        env:
+          RAILWAY_TOKEN: ${{ secrets.RAILWAY_TOKEN }}
