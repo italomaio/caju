@@ -4,10 +4,15 @@ import { QueryClientProvider, QueryClient } from "@tanstack/react-query";
 import { ConfirmContextProvider } from "./store/context/confirm/ConfirmContextProvider";
 import ConfirmDialog from "./components/ConfirmModal";
 import Loader from "./components/Loader";
+import { useEffect } from "react";
 
 const queryClient = new QueryClient();
 
 function App() {
+  useEffect(() => {
+    console.log(process.env);
+  }, []);
+
   return (
     <QueryClientProvider client={queryClient}>
       <ConfirmContextProvider>
