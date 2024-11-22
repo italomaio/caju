@@ -13,8 +13,7 @@ describe("NewUser Page tests", () => {
   });
 
   beforeEach(() => {
-    const { debug } = customRender(<NewUserPage />, {});
-    debug();
+    customRender(<NewUserPage />, {});
   });
 
   it("Should render newUser page", async () => {

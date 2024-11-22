@@ -1,9 +1,8 @@
 import { Controller, useFormContext } from "react-hook-form";
-import { InputHTMLAttributes, useMemo } from "react";
+import React, { InputHTMLAttributes, useMemo } from "react";
 import { Masks } from "~/utils/formatters";
 import { Input } from "../TextField";
 import { InputMask, InputMaskProps } from "@react-input/mask";
-import React from "react";
 
 type Props = {
   defaultValue: string;
@@ -40,7 +39,7 @@ export function ControlledInput({
           } as Partial<InputMaskProps>)
         : {},
     };
-  }, [inputProps]);
+  }, [mask]);
 
   return (
     <div>

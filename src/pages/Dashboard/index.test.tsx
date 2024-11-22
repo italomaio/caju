@@ -1,4 +1,4 @@
-import { fireEvent, getByText, screen, waitFor } from "@testing-library/react";
+import { fireEvent, screen, waitFor } from "@testing-library/react";
 import { customRender, sampleUser } from "~/utils/tests";
 
 import Dashboard from "./index";
@@ -13,8 +13,7 @@ describe("Dashboard page tests", () => {
   });
 
   beforeEach(() => {
-    const { debug } = customRender(<Dashboard />, {});
-    debug();
+    customRender(<Dashboard />, {});
   });
 
   afterEach(() => {

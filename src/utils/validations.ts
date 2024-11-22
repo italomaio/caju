@@ -19,7 +19,7 @@ export function validarCPF(cpf: any) {
     soma += parseInt(cpf.charAt(i)) * (10 - i);
   }
   resto = soma % 11;
-  let digito1 = resto < 2 ? 0 : 11 - resto;
+  const digito1 = resto < 2 ? 0 : 11 - resto;
 
   // Calcula o segundo dígito verificador
   soma = 0;
@@ -27,7 +27,7 @@ export function validarCPF(cpf: any) {
     soma += parseInt(cpf.charAt(i)) * (11 - i);
   }
   resto = soma % 11;
-  let digito2 = resto < 2 ? 0 : 11 - resto;
+  const digito2 = resto < 2 ? 0 : 11 - resto;
 
   // Verifica se os dois dígitos verificadores são iguais aos informados
   return cpf.charAt(9) == digito1 && cpf.charAt(10) == digito2;

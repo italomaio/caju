@@ -29,7 +29,15 @@
       "email": "maiofabricio@gmail.com",
       "cpf": "407.734.948-63",
       "admissionDate": "2024-11-20",
-      "status": "REPROVED"
+      "status": "REVIEW"
+    },
+    {
+      "id": "665d",
+      "employeeName": "Italo Gustavo",
+      "email": "italomaioo@gmail.com",
+      "cpf": "407.734.948-63",
+      "admissionDate": "2024-11-22",
+      "status": "REVIEW"
     }
   ]
 }

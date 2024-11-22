@@ -21,11 +21,10 @@ describe("RegistrationCard tests", () => {
       invalidateQueries: invalidateQueriesMock,
     });
 
-    const { debug } = customRender(
+    customRender(
       <SearchBar onChangeFilters={(data: any) => onChangeFiltersMock(data)} />,
       {}
     );
-    debug();
   });
 
   afterEach(() => {

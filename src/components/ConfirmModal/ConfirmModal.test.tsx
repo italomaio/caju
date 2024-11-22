@@ -7,12 +7,12 @@ import { act, useCallback } from "react";
 
 describe("ConfirmModal tests", () => {
   const Component = () => {
-    const { isOpen, handleDialog, confirm } = useConfirm();
+    const { handleDialog, confirm } = useConfirm();
 
     const onHandleDialog = useCallback(async () => {
       const isConfirmed = await confirm("Voce deseja realizar a acao?");
       handleDialog(!!isConfirmed);
-    }, [isOpen]);
+    }, [confirm, handleDialog]);
 
     return (
       <div data-testid="confirm-dialog">
@@ -32,8 +32,7 @@ describe("ConfirmModal tests", () => {
   });
 
   beforeEach(() => {
-    const { debug } = customRender(<Component />, {});
-    debug();
+    customRender(<Component />, {});
   });
 
   afterEach(() => {

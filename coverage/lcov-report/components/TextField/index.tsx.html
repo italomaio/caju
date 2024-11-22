@@ -23,30 +23,30 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">91.66% </span>
+                <span class="strong">0% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>11/12</span>
+                <span class='fraction'>0/12</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">37.5% </span>
+                <span class="strong">0% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>3/8</span>
+                <span class='fraction'>0/8</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">66.66% </span>
+                <span class="strong">0% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>2/3</span>
+                <span class='fraction'>0/3</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">91.66% </span>
+                <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>11/12</span>
+                <span class='fraction'>0/12</span>
             </div>
         
             
@@ -61,7 +61,7 @@
             </div>
         </template>
     </div>
-    <div class='status-line high'></div>
+    <div class='status-line low'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -124,14 +124,12 @@
 <a name='L59'></a><a href='#L59'>59</a>
 <a name='L60'></a><a href='#L60'>60</a>
 <a name='L61'></a><a href='#L61'>61</a>
-<a name='L62'></a><a href='#L62'>62</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
+<a name='L62'></a><a href='#L62'>62</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -156,11 +154,13 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">5x</span>
-<span class="cline-any cline-yes">5x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -172,7 +172,7 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -184,13 +184,13 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import React, { InputHTMLAttributes, useMemo } from "react";
-import styled from "styled-components";
-import { InputMask, InputMaskProps, MaskEvent } from "@react-input/mask";
-import { Masks } from "~/utils/formatters";
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js"><span class="cstat-no" title="statement not covered" >import React, { InputHTMLAttributes, useMemo } from "react";</span>
+<span class="cstat-no" title="statement not covered" >import styled from "styled-components";</span>
+<span class="cstat-no" title="statement not covered" >import { InputMask, InputMaskProps, MaskEvent } from "@react-input/mask";</span>
+<span class="cstat-no" title="statement not covered" >import { Masks } from "~/utils/formatters";</span>
 &nbsp;
-export const Input = styled.input`
+export const <span class="cstat-no" title="statement not covered" >Input = styled.input`</span>
   padding: 0 8px;
   vertical-align: middle;
   border-radius: 2px;
@@ -217,23 +217,23 @@ type Props = {
   onFill?: (event: MaskEvent) =&gt; void;
 } &amp; InputHTMLAttributes&lt;HTMLInputElement&gt;;
 &nbsp;
-const TextField = ({ label, error, mask, onFill, ...props }: Props) =&gt; {
-  const { Component, fixedProps } = useMemo(() =&gt; {
-    const haveMask = !!mask;
+const TextField = <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >({</span> label, error, mask, onFill, ...props }: Props) =&gt; {</span>
+  const { Component, fixedProps } = <span class="cstat-no" title="statement not covered" >useMemo(<span class="fstat-no" title="function not covered" >() =</span>&gt; {</span>
+    const haveMask = <span class="cstat-no" title="statement not covered" >!!mask;</span>
 &nbsp;
-    return {
-      Component: haveMask ? InputMask : <span class="branch-1 cbranch-no" title="branch not covered" >Input,</span>
+<span class="cstat-no" title="statement not covered" >    return {</span>
+      Component: haveMask ? InputMask : Input,
       fixedProps: haveMask
         ? ({
             ...Masks[mask],
-            component: Input || <span class="branch-1 cbranch-no" title="branch not covered" >undefined,</span>
+            component: Input || undefined,
             onMask: <span class="fstat-no" title="function not covered" >(e</span>) =&gt; <span class="cstat-no" title="statement not covered" >onFill &amp;&amp; onFill(e),</span>
           } as Partial&lt;InputMaskProps&gt;)
-        : <span class="branch-1 cbranch-no" title="branch not covered" >{},</span>
+        : {},
     };
-  }, [mask, props]);
+  }, [mask, onFill]);
 &nbsp;
-  return (
+<span class="cstat-no" title="statement not covered" >  return (</span>
     &lt;div&gt;
       &lt;label htmlFor={props?.id}&gt;{label}&lt;/label&gt;
       {React.createElement(Component, {
@@ -245,7 +245,7 @@ const TextField = ({ label, error, mask, onFill, ...props }: Props) =&gt; {
   );
 };
 &nbsp;
-export default TextField;
+<span class="cstat-no" title="statement not covered" >export default TextField;</span>
 &nbsp;</pre></td></tr></table></pre>
 
                 <div class='push'></div><!-- for sticky footer -->
@@ -253,7 +253,7 @@ export default TextField;
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2024-11-22T01:42:16.849Z
+                at 2024-11-22T13:19:42.090Z
             </div>
         <script src="../../prettify.js"></script>
         <script>

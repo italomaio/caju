@@ -26,40 +26,46 @@ const RegistrationCard = (props: Props) => {
 
   const queryClient = useQueryClient();
 
-  const onDeleteRegistration = useCallback(async (id: string) => {
-    const isConfirmed = await confirm(
-      "Voce esta prestes a deletar um registro. Deseja mesmo prosseguir?"
-    );
+  const onDeleteRegistration = useCallback(
+    async (id: string) => {
+      const isConfirmed = await confirm(
+        "Voce esta prestes a deletar um registro. Deseja mesmo prosseguir?"
+      );
 
-    if (isConfirmed) {
-      executeDelete(id, {
-        onSuccess() {
-          queryClient.invalidateQueries({ queryKey: ["registrations"] });
-        },
-        onError() {
-          throw new Error("Cannot delete registration");
-        },
-      });
-    }
-  }, []);
+      if (isConfirmed) {
+        executeDelete(id, {
+          onSuccess() {
+            queryClient.invalidateQueries({ queryKey: ["registrations"] });
+          },
+          onError() {
+            throw new Error("Cannot delete registration");
+          },
+        });
+      }
+    },
+    [confirm, executeDelete, queryClient]
+  );
 
-  const onPutRegistration = useCallback(async (data: RegistrationType) => {
-    const isConfirmed = await confirm(
-      "Voce esta prestes a mudar o status do candidato. Deseja mesmo prosseguir?"
-    );
+  const onPutRegistration = useCallback(
+    async (data: RegistrationType) => {
+      const isConfirmed = await confirm(
+        "Voce esta prestes a mudar o status do candidato. Deseja mesmo prosseguir?"
+      );
 
-    if (isConfirmed) {
-      executePut(data, {
-        onSuccess(data, variables, context) {
-          console.log(data, variables, context);
-          queryClient.invalidateQueries({ queryKey: ["registrations"] });
-        },
-        onError() {
-          throw new Error("Cannot delete registration");
-        },
-      });
-    }
-  }, []);
+      if (isConfirmed) {
+        executePut(data, {
+          onSuccess(data, variables, context) {
+            console.log(data, variables, context);
+            queryClient.invalidateQueries({ queryKey: ["registrations"] });
+          },
+          onError() {
+            throw new Error("Cannot delete registration");
+          },
+        });
+      }
+    },
+    [confirm, executePut, queryClient]
+  );
 
   return (
     <S.Card>

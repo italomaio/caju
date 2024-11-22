@@ -1,7 +1,7 @@
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { renderHook } from "@testing-library/react-hooks";
 import { ReactNode } from "react";
-import { usetGetRegistrations } from "./useGetRegistrations";
+import { useGetRegistrations } from "./useGetRegistrations";
 import { waitFor } from "@testing-library/react";
 import { httpClient } from "~/core/http/HttpClient";
 import { sampleUser } from "~/utils/tests";
@@ -18,7 +18,7 @@ describe("useGetRegistrations hook test", () => {
       data: [sampleUser],
     });
 
-    const { result } = renderHook(() => usetGetRegistrations({}), {
+    const { result } = renderHook(() => useGetRegistrations({}), {
       wrapper,
     });
 

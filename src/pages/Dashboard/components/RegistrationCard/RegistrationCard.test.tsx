@@ -13,7 +13,6 @@ describe("RegistrationCard tests", () => {
 
   afterEach(() => {
     jest.clearAllMocks();
-    jest.resetModules();
   });
 
   it("Should render correctly", () => {
@@ -21,11 +20,16 @@ describe("RegistrationCard tests", () => {
   });
 
   it("Should call put on click approved button", async () => {
+    (httpClient.request as jest.Mock).mockResolvedValue({
+      status: 200,
+      data: sampleUser,
+    });
+
     const button = await screen.findByText("Aprovar");
-    act(() => fireEvent.click(button));
+    await act(() => fireEvent.click(button));
 
     await waitFor(async () =>
-      expect(await httpClient.request<RegistrationType>).toHaveBeenCalledWith({
+      expect(httpClient.request).toHaveBeenCalledWith({
         url: `/registrations/${sampleUser.id}`,
         method: "PUT",
         body: { ...sampleUser, status: "APPROVED" } as RegistrationType,
@@ -38,7 +42,7 @@ describe("RegistrationCard tests", () => {
     act(() => fireEvent.click(button));
 
     await waitFor(async () =>
-      expect(await httpClient.request<RegistrationType>).toHaveBeenCalledWith({
+      expect(httpClient.request).toHaveBeenCalledWith({
         url: `/registrations/${sampleUser.id}`,
         method: "PUT",
         body: { ...sampleUser, status: "REPROVED" } as RegistrationType,
@@ -56,7 +60,7 @@ describe("RegistrationCard tests", () => {
     act(() => fireEvent.click(button));
 
     await waitFor(async () =>
-      expect(await httpClient.request<RegistrationType>).toHaveBeenCalledWith({
+      expect(httpClient.request).toHaveBeenCalledWith({
         url: `/registrations/${sampleUser.id}`,
         method: "PUT",
         body: { ...sampleUser, status: "REVIEW" } as RegistrationType,
@@ -70,7 +74,7 @@ describe("RegistrationCard tests", () => {
     );
 
     await waitFor(async () =>
-      expect(await httpClient.request<RegistrationType>).toHaveBeenCalledWith({
+      expect(httpClient.request).toHaveBeenCalledWith({
         url: `/registrations/${sampleUser.id}`,
         method: "DELETE",
       })

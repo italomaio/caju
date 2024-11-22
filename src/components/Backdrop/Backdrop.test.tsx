@@ -4,8 +4,7 @@ import Backdrop from ".";
 
 describe("Backdrop tests", () => {
   beforeEach(() => {
-    const { debug } = customRender(<Backdrop />, {});
-    debug();
+    customRender(<Backdrop />, {});
   });
 
   it("Should render Backdrop", () => {

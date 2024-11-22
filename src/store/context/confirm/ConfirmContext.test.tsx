@@ -14,7 +14,7 @@ describe("Context tests", () => {
 
         await handleDialog(true);
       })();
-    }, []);
+    }, [confirm, handleDialog]);
 
     return (
       <div data-testid="context">
@@ -24,8 +24,7 @@ describe("Context tests", () => {
   };
 
   beforeEach(() => {
-    const { debug } = render(<Consumer />);
-    debug();
+    render(<Consumer />);
   });
 
   it("Should render", () => {

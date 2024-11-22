@@ -44,7 +44,7 @@ const TextField = ({ label, error, mask, onFill, ...props }: Props) => {
           } as Partial<InputMaskProps>)
         : {},
     };
-  }, [mask, props]);
+  }, [mask, onFill]);
 
   return (
     <div>

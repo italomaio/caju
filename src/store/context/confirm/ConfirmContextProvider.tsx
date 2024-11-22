@@ -12,19 +12,15 @@ export const ConfirmContextProvider = ({
     text: undefined,
   });
 
-  const confirm = useCallback(
-    async (text: string) => {
-      return new Promise((resolve) => {
-        console.log(resolve, "resolver");
-        setState({
-          isOpen: true,
-          text,
-          resolve,
-        });
+  const confirm = useCallback(async (text: string) => {
+    return new Promise((resolve) => {
+      setState({
+        isOpen: true,
+        text,
+        resolve,
       });
-    },
-    [state]
-  );
+    });
+  }, []);
 
   const handleDialog = useCallback(
     async (accepted: boolean) => {

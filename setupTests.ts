@@ -1,11 +1,5 @@
 import "@testing-library/jest-dom";
 import "jest-styled-components";
-import { httpClient } from "./src/core/http/HttpClient";
-import {
-  useIsFetching,
-  useIsMutating,
-  useQueryClient,
-} from "@tanstack/react-query";
 
 jest.mock("./src/core/http/HttpClient", () => ({
   httpClient: {
@@ -30,12 +24,5 @@ jest.mock("@tanstack/react-query", () => {
     useIsMutating: jest.fn().mockResolvedValue(() => 1),
   };
 });
-
-// jest.mock("~/configs/axios", () => ({
-//   axiosInstance: {
-//     ...jest.requireActual("~/configs/axios"),
-//     request: jest.fn(),
-//   },
-// }));
 
 module.exports = {};

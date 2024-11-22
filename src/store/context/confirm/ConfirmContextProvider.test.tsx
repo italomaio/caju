@@ -11,7 +11,7 @@ describe("Confirm Context Provider", () => {
     const handleOpenDialog = useCallback(async () => {
       const isConfirmed = await confirm("Deseja executar tal acao?");
       setDialogResult(isConfirmed ? true : false);
-    }, []);
+    }, [confirm]);
 
     return (
       <div>
@@ -37,13 +37,11 @@ describe("Confirm Context Provider", () => {
   };
 
   beforeEach(() => {
-    const { debug } = render(
+    render(
       <ConfirmContextProvider>
         <ConsumerComponent />
       </ConfirmContextProvider>
     );
-
-    debug();
   });
 
   it("Should render", () => {

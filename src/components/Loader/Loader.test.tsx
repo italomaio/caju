@@ -4,8 +4,7 @@ import { screen } from "@testing-library/react";
 
 describe("Loader tests", () => {
   beforeEach(() => {
-    const { debug } = customRender(<Loader />, {});
-    debug();
+    customRender(<Loader />, {});
   });
 
   it("Should render correctly", () => {
