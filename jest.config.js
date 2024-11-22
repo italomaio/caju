@@ -10,5 +10,13 @@ export default {
   moduleNameMapper: {
     "^~/(.+)": "<rootDir>/src/$1",
   },
-//   setupFilesAfterEnv: ["@testing-library/jest-dom/extend-expect"],
+  setupFilesAfterEnv: ["<rootDir>/setupTests.ts"],
+  collectCoverage: true,
+  coverageDirectory: "coverage",
+  coverageReporters: ["json", "text", "lcov", "clover"],
+  collectCoverageFrom: [
+    "src/**/*.{js,jsx,ts,tsx}",
+    "!src/index.tsx",
+    "!**/node_modules/**",
+  ],
 };

@@ -1,5 +1,7 @@
-import React, { InputHTMLAttributes } from "react";
+import React, { InputHTMLAttributes, useMemo } from "react";
 import styled from "styled-components";
+import { InputMask, InputMaskProps, MaskEvent } from "@react-input/mask";
+import { Masks } from "~/utils/formatters";
 
 export const Input = styled.input`
   padding: 0 8px;
@@ -13,24 +15,45 @@ export const Input = styled.input`
   font-size: 16px;
   line-height: 18px;
   font-weight: normal;
-  border-radius:8px;
+  border-radius: 8px;
   :focus {
     outline: none;
     border: 1px solid #007c89;
     box-shadow: inset 0 0 0 1px #007c89;
   }
 `;
+
 type Props = {
   label?: string;
   error?: string;
-} & InputHTMLAttributes<any>;
+  mask?: keyof typeof Masks;
+  onFill?: (event: MaskEvent) => void;
+} & InputHTMLAttributes<HTMLInputElement>;
 
-const TextField = (props: Props) => {
+const TextField = ({ label, error, mask, onFill, ...props }: Props) => {
+  const { Component, fixedProps } = useMemo(() => {
+    const haveMask = !!mask;
+
+    return {
+      Component: haveMask ? InputMask : Input,
+      fixedProps: haveMask
+        ? ({
+            ...Masks[mask],
+            component: Input || undefined,
+            onMask: (e) => onFill && onFill(e),
+          } as Partial<InputMaskProps>)
+        : {},
+    };
+  }, [mask, props]);
+
   return (
     <div>
-      <label htmlFor={props.id}>{props.label}</label>
-      <Input {...props} />
-      <span style={{fontSize: 12, color: 'red'}}>{props.error}</span>
+      <label htmlFor={props?.id}>{label}</label>
+      {React.createElement(Component, {
+        ...fixedProps,
+        ...props,
+      })}
+      <span style={{ fontSize: 12, color: "red" }}>{error}</span>
     </div>
   );
 };
